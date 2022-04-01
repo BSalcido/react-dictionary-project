@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import axios from "axios";
+import SearchResults from "./SearchResults";
 import "./Dictionary.css";
 
 function Dictionary() {
   const [word, setWord] = useState("");
+  const [searchResults, setSearchResults] = useState(null);
 
   function handleApiResponse(response) {
-    console.log(response.data);
+    setSearchResults(response.data[0]);
   }
 
   function callApi(url) {
     axios.get(url).then(handleApiResponse);
+    console.log(url);
   }
 
   function search(event) {
@@ -44,6 +47,7 @@ function Dictionary() {
           </div>
         </form>
       </div>
+      <SearchResults results={searchResults} />
     </div>
   );
 }
