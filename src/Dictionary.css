@@ -1,9 +1,9 @@
-.Dictionary button {
+.Dictionary__btn {
   background-color: #2fd7b4;
   color: #ffffff;
 }
 
-.Dictionary button:hover {
+.Dictionary__btn:hover {
   background-color: #26f8cd;
   color: #dff7f2;
 }
