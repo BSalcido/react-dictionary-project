@@ -1,0 +1,25 @@
+.Meanings {
+  margin-top: 30px;
+}
+
+.Meanings__part {
+  color: #2fd7b4;
+}
+
+.Meanings__definitions {
+  margin-top: 15px;
+  margin-bottom: 35px;
+}
+
+.Meanings__definition {
+  margin-bottom: 5px;
+}
+
+.Meanings__example {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.Meanings__example:first-letter {
+  text-transform: capitalize;
+}

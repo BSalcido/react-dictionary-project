@@ -4,11 +4,10 @@ import Meanings from "./Meanings";
 
 function SearchResults(props) {
   if (props.results) {
-    console.log(props);
     return (
       <div className="SearchResults">
-        <h2>{props.results.word}</h2>
-        <em>{props.results.phonetic}</em>
+        <h2 className="SearchResults__word">{props.results.word}</h2>
+        <em className="SearchResults__phonetic">{props.results.phonetic}</em>
         {props.results.meanings.map((meaning, index) => {
           return (
             <div className="SearchResults__meanings" key={index}>

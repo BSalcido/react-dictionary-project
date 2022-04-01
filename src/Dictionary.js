@@ -13,7 +13,6 @@ function Dictionary() {
 
   function callApi(url) {
     axios.get(url).then(handleApiResponse);
-    console.log(url);
   }
 
   function search(event) {

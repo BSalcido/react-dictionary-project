@@ -1,0 +1,11 @@
+.SearchResults {
+  margin-top: 30px;
+}
+
+.SearchResults__word {
+  font-size: 50px;
+}
+
+.SearchResults__phonetic {
+  font-size: 20px;
+}
