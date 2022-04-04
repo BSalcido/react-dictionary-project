@@ -1,5 +1,7 @@
 import React from "react";
 import "./Meanings.css";
+import Synonyms from "./Synonyms";
+import Antonyms from "./Antonyms";
 
 function Meanings(props) {
   return (
@@ -18,6 +20,8 @@ function Meanings(props) {
           </div>
         );
       })}
+      <Synonyms synonyms={props.meanings.synonyms} />
+      <Antonyms antonyms={props.meanings.antonyms} />
     </div>
   );
 }

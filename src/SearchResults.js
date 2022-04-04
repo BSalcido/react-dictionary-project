@@ -4,6 +4,7 @@ import Meanings from "./Meanings";
 
 function SearchResults(props) {
   if (props.results) {
+    console.log(props.results);
     return (
       <div className="SearchResults">
         <h2 className="SearchResults__word">{props.results.word}</h2>
