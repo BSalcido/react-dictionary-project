@@ -1,5 +1,6 @@
 import React from "react";
 import "./Meanings.css";
+import Example from "./Example";
 import Synonyms from "./Synonyms";
 import Antonyms from "./Antonyms";
 
@@ -14,9 +15,7 @@ function Meanings(props) {
               {`${index + 1}. `}
               {definition.definition}
             </p>
-            <div className="Meanings__example fst-italic">
-              {definition.example}
-            </div>
+            <Example example={definition.example} />
           </div>
         );
       })}
