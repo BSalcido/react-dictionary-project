@@ -2,7 +2,7 @@ import React from "react";
 import "./Meanings.css";
 
 function Example(props) {
-  if (props.example.length) {
+  if (props.example) {
     return (
       <div className="Meanings__example fst-italic">"{props.example}"</div>
     );
