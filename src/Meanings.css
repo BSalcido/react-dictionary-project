@@ -1,23 +1,19 @@
-.Meanings {
-  margin-top: 30px;
-}
-
 .Meanings__part {
   color: #2fd7b4;
 }
 
 .Meanings__definitions {
   margin-top: 15px;
-  margin-bottom: 35px;
+  margin-bottom: 25px;
 }
 
 .Meanings__definition {
-  margin-bottom: 5px;
+  margin-bottom: 7px;
 }
 
 .Meanings__example {
-  margin-top: 10px;
   margin-bottom: 10px;
+  color: #65706dd0;
 }
 
 .Meanings__example:first-letter {

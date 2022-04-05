@@ -5,11 +5,11 @@ function Synonyms(props) {
   if (props.synonyms.length) {
     return (
       <div className="Synonyms">
-        Synonyms:
-        <ul className="Synonyms__list ">
+        <div className="Synonyms__head">SYNONYMS</div>
+        <ul className="Synonyms__list">
           {props.synonyms.map((synonym, index) => {
             return (
-              <li className="Synonyms__item" key={index}>
+              <li className="Synonyms__item d-inline-flex" key={index}>
                 {synonym}
               </li>
             );

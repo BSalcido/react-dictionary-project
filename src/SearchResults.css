@@ -1,11 +1,8 @@
-.SearchResults {
-  margin-top: 30px;
-}
-
 .SearchResults__word {
-  font-size: 50px;
+  font-size: 55px;
 }
 
 .SearchResults__phonetic {
+  color: #5d9289;
   font-size: 20px;
 }

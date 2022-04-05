@@ -3,20 +3,6 @@ html {
   font-family: "PT Serif", serif;
 }
 
-.App {
-  background-color: #ffffff;
-  margin: 50px 100px;
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0px 1px 13px -5px rgba(47, 215, 180, 0.33);
-  color: #333f44;
-}
-
-.App-header {
-  color: #377468;
-  margin-bottom: 30px;
-  font-weight: bold;
-}
 
 .App footer {
   color: #cdd0d1;

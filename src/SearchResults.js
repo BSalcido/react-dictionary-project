@@ -2,28 +2,35 @@ import React from "react";
 import "./SearchResults.css";
 import Meanings from "./Meanings";
 import Phonetics from "./Phonetics";
+import "./Sections.css";
 
 function SearchResults(props) {
   if (props.results) {
     console.log(props.results);
+
     return (
       <div className="SearchResults">
-        <h2 className="SearchResults__word">{props.results.word}</h2>
-        <em className="SearchResults__phonetic">{props.results.phonetic}</em>
-        <h3 className="SearchResults__audios">Listen pronunciation(s):</h3>
-        {props.results.phonetics.map((phonetic, index) => {
-          return (
-            <div className="SearchResults__audio-phonetics" key={index}>
-              <Phonetics phonetics={phonetic} />
-            </div>
-          );
-        })}
+        <section className="SearchResults__section-word">
+          <h2 className="SearchResults__word">{props.results.word}</h2>
+          <em className="SearchResults__phonetic">{props.results.phonetic}</em>
+          <div className="SearchResults__audios mt-4">
+            {props.results.phonetics.map((phonetic, index) => {
+              return (
+                <div className="SearchResults__audio-phonetics" key={index}>
+                  <Phonetics phonetics={phonetic} />
+                </div>
+              );
+            })}
+          </div>
+        </section>
 
         {props.results.meanings.map((meaning, index) => {
           return (
-            <div className="SearchResults__meanings" key={index}>
-              <Meanings meanings={meaning} />
-            </div>
+            <section className="SearchResults__section-meaning">
+              <div className="SearchResults__meanings" key={index}>
+                <Meanings meanings={meaning} />
+              </div>
+            </section>
           );
         })}
       </div>

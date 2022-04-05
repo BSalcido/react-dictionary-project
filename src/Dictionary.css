@@ -1,3 +1,23 @@
+.Dictionary-title {
+  color: #377468;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.Dictionary__form-control {
+  width: 100%;
+}
+.Dictionary__form-control::placeholder {
+  color: #37746869;
+}
+
+.Dictionary__form-control:focus {
+  /* background-color: #dff7f2; */
+  outline: none !important;
+  box-shadow: 0 0 0 5px #dff7f2;
+  border: #26f8cd;
+}
+
 .Dictionary__btn {
   background-color: #2fd7b4;
   color: #ffffff;
@@ -6,4 +26,9 @@
 .Dictionary__btn:hover {
   background-color: #26f8cd;
   color: #dff7f2;
+}
+.Dictionary__btn:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 5px #dff7f2;
+  border: #26f8cd;
 }

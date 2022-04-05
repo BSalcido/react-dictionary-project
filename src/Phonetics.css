@@ -1,0 +1,11 @@
+.Phonetics {
+  font-size: 20px;
+}
+
+.Phonetics__audio-link {
+  color: #2fd7b4;
+}
+
+.Phonetics__audio-link:hover {
+  color: #26f8cd;
+}

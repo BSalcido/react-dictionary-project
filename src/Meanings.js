@@ -10,15 +10,16 @@ function Meanings(props) {
       <h3 className="Meanings__part">{props.meanings.partOfSpeech}</h3>
       {props.meanings.definitions.map((definition, index) => {
         return (
-          <div className="Meanings__definitions" key={index}>
+          <div className="Meanings__definitions px-3" key={index}>
             <p className="Meanings__definition">
-              {`${index + 1}. `}
+              <span className="me-3"> {`${index + 1}.`}</span>
               {definition.definition}
             </p>
             <Example example={definition.example} />
           </div>
         );
       })}
+
       <Synonyms synonyms={props.meanings.synonyms} />
       <Antonyms antonyms={props.meanings.antonyms} />
     </div>

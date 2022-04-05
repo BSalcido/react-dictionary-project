@@ -1,0 +1,11 @@
+.Antonyms__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Antonyms__item {
+  margin-right: 15px;
+  border-radius: 4px;
+  color: #29b89b;
+}
