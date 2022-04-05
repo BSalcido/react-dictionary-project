@@ -2,6 +2,7 @@
   color: #377468;
   margin-bottom: 30px;
   font-weight: bold;
+  font-size: 38px;
 }
 
 .Dictionary__form-control {
@@ -12,7 +13,6 @@
 }
 
 .Dictionary__form-control:focus {
-  /* background-color: #dff7f2; */
   outline: none !important;
   box-shadow: 0 0 0 5px #dff7f2;
   border: #26f8cd;
@@ -21,6 +21,7 @@
 .Dictionary__btn {
   background-color: #2fd7b4;
   color: #ffffff;
+  font-size: 16px;
 }
 
 .Dictionary__btn:hover {
@@ -31,4 +32,23 @@
   outline: none !important;
   box-shadow: 0 0 0 5px #dff7f2;
   border: #26f8cd;
+}
+
+@media (max-width: 450px) {
+  .Dictionary-title {
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+  .Dictionary__btn {
+    padding: 2px 5px;
+    margin-top: 4px;
+    font-size: 14px;
+  }
+  .Dictionary__search-engine {
+    font-size: 13px;
+  }
+  .Dictionary__form-control {
+    width: 100%;
+    font-size: 14px;
+  }
 }

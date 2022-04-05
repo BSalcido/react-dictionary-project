@@ -6,8 +6,6 @@ import "./Sections.css";
 
 function SearchResults(props) {
   if (props.results) {
-    console.log(props.results);
-
     return (
       <div className="SearchResults">
         <section className="SearchResults__section-word">

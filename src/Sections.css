@@ -1,10 +1,28 @@
 section {
   background-color: #ffffff;
-  margin: 50px 100px;
+  margin: 20px 100px;
   padding: 30px;
   border-radius: 16px;
   box-shadow: 0px 1px 13px -5px rgb(5, 150, 121);
   color: #333f44;
 }
 
+@media (max-width: 1000px) {
+  section {
+    margin: 20px 70px;
+  }
+}
 
+@media (max-width: 750px) {
+  section {
+    margin: 20px 40px;
+    padding: 25px;
+  }
+}
+
+@media (max-width: 450px) {
+  section {
+    margin: 10px 20px;
+    padding: 18px;
+  }
+}

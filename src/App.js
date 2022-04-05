@@ -6,8 +6,7 @@ function App() {
     <div className="App">
       <div className="container">
         <Dictionary />
-        {/* <hr className="mb-0 mt-5" />
-        <footer>Coded by Brisa</footer> */}
+        <footer>Coded by Brisa</footer>
       </div>
     </div>
   );

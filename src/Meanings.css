@@ -19,3 +19,21 @@
 .Meanings__example:first-letter {
   text-transform: capitalize;
 }
+
+@media (max-width: 450px) {
+  .Meanings {
+    font-size: 15px;
+  }
+  .Meanings__part {
+    font-size: 20px;
+  }
+
+  .Meanings__definition {
+    margin-bottom: 5px;
+  }
+
+  .Meanings__example {
+    margin-bottom: 7px;
+    color: #65706dd0;
+  }
+}

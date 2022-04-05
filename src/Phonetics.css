@@ -9,3 +9,9 @@
 .Phonetics__audio-link:hover {
   color: #26f8cd;
 }
+
+@media (max-width: 450px) {
+  .Phonetics {
+    font-size: 13px;
+  }
+}

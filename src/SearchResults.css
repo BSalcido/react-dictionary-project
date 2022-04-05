@@ -6,3 +6,13 @@
   color: #5d9289;
   font-size: 20px;
 }
+
+@media (max-width: 450px) {
+  .SearchResults__word {
+    font-size: 35px;
+  }
+
+  .SearchResults__phonetic {
+    font-size: 15px;
+  }
+}

@@ -10,12 +10,10 @@ function Dictionary() {
 
   function handleApiResponse(response) {
     setSearchResults(response.data[0]);
-    console.log(response);
   }
 
   function callApi(url) {
     axios.get(url).then(handleApiResponse);
-    console.log(url);
   }
 
   function search(event) {
@@ -42,7 +40,7 @@ function Dictionary() {
                 onChange={handleWordInput}
               ></input>
             </div>
-            <div className="col-sm-4 col-md-3 col-lg-2 col-xl-1 align-self-center">
+            <div className="col-sm-4 col-md-3 col-lg-2 col-xl-1 d-flex justify-content-start">
               <input
                 className="Dictionary__btn btn"
                 type="submit"
