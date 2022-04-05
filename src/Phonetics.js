@@ -1,5 +1,7 @@
 import React from "react";
 import "./Phonetics.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 
 function Phonetics(props) {
   if (props.phonetics.audio) {
@@ -12,7 +14,7 @@ function Phonetics(props) {
           target={"_blank"}
           rel="noreferrer"
         >
-          Listen
+          <FontAwesomeIcon icon={faPlayCircle} />
         </a>{" "}
         {props.phonetics.text}
       </div>
