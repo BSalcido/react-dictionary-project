@@ -1,0 +1,51 @@
+.Photos__image-table {
+  padding-inline: 28px;
+}
+
+.Photos__image {
+  margin: 10px auto;
+}
+
+.Photos img {
+  border-radius: 8px;
+}
+
+@media (max-width: 1200px) {
+  .Photos__image-table {
+    padding-inline: 18px;
+  }
+
+  .Photos__image {
+    margin: 9px auto;
+  }
+}
+
+@media (max-width: 1000px) {
+  .Photos__image-table {
+    padding-inline: 15px;
+  }
+
+  .Photos__image {
+    margin: 8px auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .Photos__image-table {
+    padding-inline: 1px;
+  }
+
+  .Photos__image {
+    margin: 5px auto;
+  }
+}
+
+@media (max-width: 365px) {
+  .Photos__image-table {
+    padding: 0;
+  }
+
+  .Photos__image {
+    margin: 2px auto;
+  }
+}

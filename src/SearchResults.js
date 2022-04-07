@@ -8,10 +8,10 @@ function SearchResults(props) {
   if (props.results) {
     return (
       <div className="SearchResults">
-        <section className="SearchResults__section-word">
+        <section className="SearchResults__section-word-header">
           <h2 className="SearchResults__word">{props.results.word}</h2>
           <em className="SearchResults__phonetic">{props.results.phonetic}</em>
-          <div className="SearchResults__audios mt-4">
+          <div className="SearchResults__audios">
             {props.results.phonetics.map((phonetic, index) => {
               return (
                 <div className="SearchResults__audio-phonetics" key={index}>
@@ -21,11 +21,10 @@ function SearchResults(props) {
             })}
           </div>
         </section>
-
         {props.results.meanings.map((meaning, index) => {
           return (
-            <section className="SearchResults__section-meaning">
-              <div className="SearchResults__meanings" key={index}>
+            <section className="SearchResults__section-meaning" key={index}>
+              <div className="SearchResults__meanings">
                 <Meanings meanings={meaning} />
               </div>
             </section>
