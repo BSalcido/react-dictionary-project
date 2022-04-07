@@ -10,6 +10,25 @@ function Dictionary() {
   const [searchResults, setSearchResults] = useState(null);
   const [photos, setPhotos] = useState(null);
 
+  const [errorDictionary, setErrorDictionary] = useState(false);
+  const errorMessageDictionary = (
+    <section className="mt-5 py-5">
+      <div className="Dictionary__errorMessage">
+        Sorry!
+        <br />
+        We couldn't find definitions for the word you were looking for.
+      </div>
+      <div className="Dictionary__errorResolution">
+        You can try the search again at later time or head to the web instead.
+      </div>
+    </section>
+  );
+  const contentDictionary = errorDictionary ? (
+    errorMessageDictionary
+  ) : (
+    <SearchResults results={searchResults} />
+  );
+
   function handleDictionaryApiResponse(response) {
     setSearchResults(response.data[0]);
   }
@@ -18,8 +37,15 @@ function Dictionary() {
     setPhotos(response.data.photos);
   }
 
+  function handleDictionaryApiError(error) {
+    setErrorDictionary(true);
+  }
+
   function callDictionaryApi(url) {
-    axios.get(url).then(handleDictionaryApiResponse);
+    axios
+      .get(url)
+      .then(handleDictionaryApiResponse)
+      .catch(handleDictionaryApiError);
   }
 
   function callPexelsApi(url, key) {
@@ -29,6 +55,7 @@ function Dictionary() {
   }
 
   function search(event) {
+    setErrorDictionary(false);
     event.preventDefault();
     let dictionaryApiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
     callDictionaryApi(dictionaryApiUrl);
@@ -57,7 +84,7 @@ function Dictionary() {
                 onChange={handleWordInput}
               ></input>
             </div>
-            <div className="col-1 col-sm-4 col-md-3 col-lg-2 col-xl-1 d-flex justify-content-start align-items-center">
+            <div className="col-1 col-sm-4 col-md-3 col-lg-2 col-xl-1 d-flex justify-contentDictionary-start align-items-center">
               <input
                 className="Dictionary__btn btn"
                 type="submit"
@@ -70,8 +97,8 @@ function Dictionary() {
           </form>
         </div>
       </section>
-      <SearchResults results={searchResults} />
-      <Photos photos={photos} />
+      {contentDictionary}
+      {!errorDictionary && <Photos photos={photos} />}
     </div>
   );
 }

@@ -34,6 +34,31 @@
   border: #26f8cd;
 }
 
+.Dictionary__errorMessage {
+  text-align: center;
+  font-size: 50px;
+  color: #2fd7b4;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.Dictionary__errorResolution {
+  text-align: center;
+  font-size: 25px;
+  color: #37746893;
+}
+
+@media (max-width: 1200px) {
+  .Dictionary__errorMessage {
+    font-size: 35px;
+    margin-bottom: 30px;
+  }
+
+  .Dictionary__errorResolution {
+    font-size: 16px;
+  }
+}
+
 @media (max-width: 576px) {
   .Dictionary-title {
     margin-bottom: 20px;
@@ -50,5 +75,14 @@
   .Dictionary__form-control {
     width: 100%;
     font-size: 14px;
+  }
+
+  .Dictionary__errorMessage {
+    font-size: 25px;
+    margin-bottom: 30px;
+  }
+
+  .Dictionary__errorResolution {
+    font-size: 10px;
   }
 }

@@ -3,7 +3,7 @@ import "./Photos.css";
 import "./Sections.css";
 
 function Photos(props) {
-  if (props.photos) {
+  if (props?.photos?.length > 0) {
     return (
       <div className="Photos">
         <section className="Photos__section">
