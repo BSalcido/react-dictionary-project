@@ -4,7 +4,6 @@ import "./Sections.css";
 
 function Photos(props) {
   if (props.photos) {
-    console.log(props.photos);
     return (
       <div className="Photos">
         <section className="Photos__section">

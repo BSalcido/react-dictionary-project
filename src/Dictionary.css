@@ -34,7 +34,7 @@
   border: #26f8cd;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 576px) {
   .Dictionary-title {
     margin-bottom: 20px;
     font-size: 20px;

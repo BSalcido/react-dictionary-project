@@ -7,6 +7,10 @@
   font-size: 20px;
 }
 
+.SearchResults__audios {
+  margin-top: 8px;
+}
+
 @media (max-width: 450px) {
   .SearchResults__word {
     font-size: 35px;
