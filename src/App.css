@@ -8,9 +8,27 @@ html {
 }
 
 .App footer {
-  color: #cdd0d1;
+  color: #3774689d;
   text-align: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin-top: 50px;
+  margin-top: 80px;
   margin-bottom: 3px;
+  font-size: 15px;
+  padding: 5px;
+}
+.App footer a {
+  color: #2fd7b4;
+  text-decoration: none;
+}
+
+.App footer a:hover {
+  color: #26f8cd;
+}
+
+@media (max-width: 600px) {
+  .App footer {
+    margin-top: 30px;
+    font-size: 10px;
+    padding: 10px;
+  }
 }
