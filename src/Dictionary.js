@@ -65,7 +65,7 @@ function Dictionary() {
               />
             </div>
             <div className="form-text">
-              Suggested words: sunrise, happy, music, color...
+              i.e. sunrise, happy, music, color...
             </div>
           </form>
         </div>
