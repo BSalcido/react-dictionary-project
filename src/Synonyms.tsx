@@ -1,13 +1,15 @@
 import React from "react";
 import "./Synonyms.css";
 
-function Synonyms(props) {
-  if (props.synonyms.length) {
+type Props = { synonyms: string[] };
+
+const Synonyms = ({ synonyms }: Props) => {
+  if (synonyms.length) {
     return (
       <div className="Synonyms">
         <div className="Synonyms__head">SYNONYMS</div>
         <ul className="Synonyms__list">
-          {props.synonyms.map((synonym, index) => {
+          {synonyms.map((synonym, index) => {
             return (
               <li className="Synonyms__item d-inline-flex" key={index}>
                 {synonym}
@@ -20,6 +22,6 @@ function Synonyms(props) {
   } else {
     return null;
   }
-}
+};
 
 export default Synonyms;
