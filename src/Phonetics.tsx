@@ -3,24 +3,31 @@ import "./Phonetics.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 
-function Phonetics(props) {
-  if (props.phonetics.audio && props.phonetics.text) {
+type Props = {
+  phonetics: {
+    audio: string;
+    text: string;
+  };
+};
+
+const Phonetics = ({ phonetics }: Props) => {
+  if (phonetics.audio && phonetics.text) {
     return (
       <div className="Phonetics">
         <a
           className="Phonetics__audio-link pe-3"
-          href={props.phonetics.audio}
+          href={phonetics.audio}
           target={"_blank"}
           rel="noreferrer"
         >
           <FontAwesomeIcon icon={faPlayCircle} />
         </a>
-        {props.phonetics.text}
+        {phonetics.text}
       </div>
     );
   } else {
     return null;
   }
-}
+};
 
 export default Phonetics;
