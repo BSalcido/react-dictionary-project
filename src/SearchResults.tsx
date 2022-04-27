@@ -3,16 +3,27 @@ import "./SearchResults.css";
 import Meanings from "./Meanings";
 import Phonetics from "./Phonetics";
 import "./Sections.css";
+import { Phonetic, Meaning } from "./types";
 
-function SearchResults(props) {
-  if (props.results) {
+type Props = {
+  results: {
+    word: string;
+    phonetic: string;
+    phonetics: Phonetic[];
+    meanings: Meaning[];
+  };
+};
+
+const SearchResults = ({ results }: Props) => {
+  if (results) {
+    console.log(results);
     return (
       <div className="SearchResults">
         <section className="SearchResults__section-word-header">
-          <h2 className="SearchResults__word">{props.results.word}</h2>
-          <em className="SearchResults__phonetic">{props.results.phonetic}</em>
+          <h2 className="SearchResults__word">{results.word}</h2>
+          <em className="SearchResults__phonetic">{results.phonetic}</em>
           <div className="SearchResults__audios">
-            {props.results.phonetics.map((phonetic, index) => {
+            {results.phonetics.map((phonetic, index) => {
               return (
                 <div className="SearchResults__audio-phonetics" key={index}>
                   <Phonetics phonetics={phonetic} />
@@ -21,7 +32,7 @@ function SearchResults(props) {
             })}
           </div>
         </section>
-        {props.results.meanings.map((meaning, index) => {
+        {results.meanings.map((meaning, index) => {
           return (
             <section className="SearchResults__section-meaning" key={index}>
               <div className="SearchResults__meanings">
@@ -35,6 +46,6 @@ function SearchResults(props) {
   } else {
     return null;
   }
-}
+};
 
 export default SearchResults;
