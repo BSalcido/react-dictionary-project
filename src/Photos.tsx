@@ -2,8 +2,13 @@ import React from "react";
 import "./Photos.css";
 import "./Sections.css";
 
-function Photos(props) {
+type Photos = { src: { original: string; tiny: string }; alt: string };
+
+type Props = { photos: Photos[] };
+
+const Photos = (props: Props) => {
   if (props?.photos?.length > 0) {
+    console.log(props);
     return (
       <div className="Photos">
         <section className="Photos__section">
@@ -35,6 +40,6 @@ function Photos(props) {
   } else {
     return null;
   }
-}
+};
 
 export default Photos;
