@@ -4,11 +4,12 @@ import SearchResults from "./SearchResults";
 import Photos from "./Photos";
 import "./Dictionary.css";
 import "./Sections.css";
+import { DictionaryResponse, WordResult, PhotosResponse, Photo } from "./types";
 
 function Dictionary() {
   const [word, setWord] = useState("");
-  const [searchResults, setSearchResults] = useState(null);
-  const [photos, setPhotos] = useState(null);
+  const [searchResults, setSearchResults] = useState<WordResult | null>(null);
+  const [photos, setPhotos] = useState<Photo[] | null>(null);
 
   const [errorDictionary, setErrorDictionary] = useState(false);
   const errorMessageDictionary = (
@@ -29,32 +30,32 @@ function Dictionary() {
     <SearchResults results={searchResults} />
   );
 
-  function handleDictionaryApiResponse(response) {
+  function handleDictionaryApiResponse(response: DictionaryResponse) {
     setSearchResults(response.data[0]);
   }
 
-  function handlePexelsApiResponse(response) {
+  function handlePexelsApiResponse(response: PhotosResponse) {
     setPhotos(response.data.photos);
   }
 
-  function handleDictionaryApiError(error) {
+  function handleDictionaryApiError() {
     setErrorDictionary(true);
   }
 
-  function callDictionaryApi(url) {
+  function callDictionaryApi(url: string) {
     axios
       .get(url)
       .then(handleDictionaryApiResponse)
       .catch(handleDictionaryApiError);
   }
 
-  function callPexelsApi(url, key) {
+  function callPexelsApi(url: string, key: string) {
     axios
       .get(url, { headers: { Authorization: `Bearer ${key}` } })
       .then(handlePexelsApiResponse);
   }
 
-  function search(event) {
+  function search(event: React.FormEvent<HTMLFormElement>) {
     setErrorDictionary(false);
     event.preventDefault();
     let dictionaryApiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
@@ -66,7 +67,7 @@ function Dictionary() {
     callPexelsApi(pexelsApiUrl, pexelsApiKey);
   }
 
-  function handleWordInput(event) {
+  function handleWordInput(event: React.ChangeEvent<HTMLInputElement>) {
     setWord(event.target.value);
   }
 

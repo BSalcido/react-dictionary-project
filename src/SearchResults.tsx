@@ -3,16 +3,9 @@ import "./SearchResults.css";
 import Meanings from "./Meanings";
 import Phonetics from "./Phonetics";
 import "./Sections.css";
-import { Phonetic, Meaning } from "./types";
+import { WordResult } from "./types";
 
-type Props = {
-  results: {
-    word: string;
-    phonetic: string;
-    phonetics: Phonetic[];
-    meanings: Meaning[];
-  };
-};
+type Props = { results: WordResult | null };
 
 const SearchResults = ({ results }: Props) => {
   if (results) {
