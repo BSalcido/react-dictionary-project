@@ -7,7 +7,6 @@ type Props = { photos: Photo[] | null };
 
 const Photos = (props: Props) => {
   if (props.photos && props.photos.length > 0) {
-    console.log(props);
     return (
       <div className="Photos">
         <section className="Photos__section">

@@ -9,7 +9,6 @@ type Props = { results: WordResult | null };
 
 const SearchResults = ({ results }: Props) => {
   if (results) {
-    console.log(results);
     return (
       <div className="SearchResults">
         <section className="SearchResults__section-word-header">
