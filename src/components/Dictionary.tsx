@@ -4,7 +4,7 @@ import SearchResults from "./SearchResults";
 import Photos from "./Photos";
 import "./Dictionary.css";
 import "./Sections.css";
-import { DictionaryResponse, WordResult, PhotosResponse, Photo } from "./types";
+import { DictionaryResponse, WordResult, PhotosResponse, Photo } from "../types";
 
 function Dictionary() {
   const [word, setWord] = useState("");

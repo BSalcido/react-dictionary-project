@@ -3,7 +3,7 @@ import "./SearchResults.css";
 import Meanings from "./Meanings";
 import Phonetics from "./Phonetics";
 import "./Sections.css";
-import { WordResult } from "./types";
+import { WordResult } from "../types";
 
 type Props = { results: WordResult | null };
 

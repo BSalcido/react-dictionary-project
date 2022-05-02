@@ -1,7 +1,7 @@
 import React from "react";
 import "./Photos.css";
 import "./Sections.css";
-import { Photo } from "./types";
+import { Photo } from "../types";
 
 type Props = { photos: Photo[] | null };
 

@@ -3,7 +3,7 @@ import "./Meanings.css";
 import Example from "./Example";
 import Synonyms from "./Synonyms";
 import Antonyms from "./Antonyms";
-import { Definition } from "./types";
+import { Definition } from "../types";
 
 type Props = {
   meanings: {
