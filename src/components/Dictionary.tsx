@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import axios from "axios";
 import SearchResults from "./SearchResults";
 import Photos from "./Photos";
 import "./Dictionary.css";
 import "./Sections.css";
-import { DictionaryResponse, WordResult, PhotosResponse, Photo } from "../types";
+import { WordResult, Photo } from "../types";
+import { getDictionaryApi, getPexelsApi } from "../api/api";
 
 function Dictionary() {
   const [word, setWord] = useState("");
@@ -30,41 +30,27 @@ function Dictionary() {
     <SearchResults results={searchResults} />
   );
 
-  function handleDictionaryApiResponse(response: DictionaryResponse) {
-    setSearchResults(response.data[0]);
+  async function callDictionaryApi() {
+    try {
+      const wordResults = await getDictionaryApi(word);
+      setSearchResults(wordResults[0]);
+    } catch (error) {
+      setErrorDictionary(true);
+    }
   }
 
-  function handlePexelsApiResponse(response: PhotosResponse) {
-    setPhotos(response.data.photos);
-  }
-
-  function handleDictionaryApiError() {
-    setErrorDictionary(true);
-  }
-
-  function callDictionaryApi(url: string) {
-    axios
-      .get(url)
-      .then(handleDictionaryApiResponse)
-      .catch(handleDictionaryApiError);
-  }
-
-  function callPexelsApi(url: string, key: string) {
-    axios
-      .get(url, { headers: { Authorization: `Bearer ${key}` } })
-      .then(handlePexelsApiResponse);
+  async function callPexelsApi() {
+    try {
+      const photos = await getPexelsApi(word);
+      setPhotos(photos);
+    } catch (error) {}
   }
 
   function search(event: React.FormEvent<HTMLFormElement>) {
     setErrorDictionary(false);
     event.preventDefault();
-    let dictionaryApiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
-    callDictionaryApi(dictionaryApiUrl);
-
-    const pexelsApiKey =
-      "563492ad6f91700001000001e600859e320a4bc694188231ff1ec654";
-    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${word}&per_page=12`;
-    callPexelsApi(pexelsApiUrl, pexelsApiKey);
+    callDictionaryApi();
+    callPexelsApi();
   }
 
   function handleWordInput(event: React.ChangeEvent<HTMLInputElement>) {
@@ -85,7 +71,7 @@ function Dictionary() {
                 onChange={handleWordInput}
               ></input>
             </div>
-            <div className="col-1 col-sm-4 col-md-3 col-lg-2 col-xl-1 d-flex justify-contentDictionary-start align-items-center">
+            <div className="col-1 col-sm-4 col-md-3 col-lg-2 col-xl-1 d-flex">
               <input
                 className="Dictionary__btn btn"
                 type="submit"
